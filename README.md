@@ -22,3 +22,9 @@ in Figure 1. (The current POS terminal can be replaced in this web-based solutio
 not have to install apps
 - The system should be extendable to use in multiple restaurants in the future
 - The current transactions is about 300 orders per day.
+
+## Hướng dẫn build môi trường 
+Yêu cầu cài docker trước nha !!!
+- `git clone https://github.com/vtttuong/TTCNPM-202`
+- `cd TTCNPM-202`
+- `docker-compose up`
