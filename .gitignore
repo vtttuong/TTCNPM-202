@@ -157,6 +157,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+<<<<<<< HEAD
 
 # pytype static type analyzer
 .pytype/
@@ -166,3 +167,5 @@ cython_debug/
 
 .idea
 
+=======
+>>>>>>> 0d7a5fdb8deba35354ba8f262efe0b55e450a3f0
