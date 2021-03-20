@@ -28,5 +28,7 @@ Yêu cầu cài docker trước nha !!!
 - `git clone https://github.com/vtttuong/TTCNPM-202`
 - `cd TTCNPM-202`
 - `docker-compose up`
+
 frontend project sẽ được chạy ở `http://localhost:8080/`
+
 backend project sẽ được chạy ở `http://localhost:8000/api/posts`
