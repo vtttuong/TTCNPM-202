@@ -21,8 +21,8 @@ class Blog extends React.Component {
             <Layout>
                 <Header>
                     <Menu theme="dark" mode="horizontal" defaultSelectedKeys={[this.state.selected.toString()]}>
-                        <Menu.Item key="1" onClick={() => this.handleClick(1)}> Read Posts</Menu.Item>
-                        <Menu.Item key="2" onClick={() => this.handleClick(2)}> Create Post</Menu.Item>
+                        <Menu.Item key="1" onClick={() => this.handleClick(1)}> Check bill</Menu.Item>
+                        <Menu.Item key="2" onClick={() => this.handleClick(2)}> Check payment</Menu.Item>
                     </Menu></Header>
                 <Content>
                     {this.state.selected === 1 ? <ListPosts /> : <CreateNewPost />
