@@ -1,21 +1,21 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import './BrandFilter.scss';
-import {brands} from "../../data/brands";
-import {addBrandToFilter, removeBrandFromFilter} from "../../actions";
+import './CategoryFilter.scss';
+import {categories} from "../../data/categories";
+import {addCategoryToFilter, removeCategoryFromFilter} from "../../actions";
 
 
-const BrandFilter = (props) => {
+const CategoryFilter = (props) => {
 
-    const {dispatch, brandItemsCount} = props;
+    const {dispatch, categoryItemsCount} = props;
     const handleSelectBox = (e) => {
         const name = e.target.name;
         const value = e.target.checked;
 
         if(e.target.checked) {
-            dispatch(addBrandToFilter(name));
+            dispatch(addCategoryToFilter(name));
         } else {
-            dispatch(removeBrandFromFilter(name));
+            dispatch(removeCategoryFromFilter(name));
         }
     };
 
@@ -23,14 +23,14 @@ const BrandFilter = (props) => {
         return (
             <div className="card mb-3">
                 <div className="card-header">
-                    <h3>Brands</h3>
+                    <h3>Menu</h3>
                 </div>
                 <ul className="list-group flex-row flex-wrap">
-                    {brands.map(brand => (
+                    {categories.map(category => (
                         <li className="list-group-item flex-50">
-                            <label className="custom-checkbox text-capitalize"> {brand} ({brandItemsCount[brand]})
+                            <label className="custom-checkbox text-capitalize"> {category} ({categoryItemsCount[category]})
                                 <input type="checkbox"
-                                       name={brand}
+                                       name={category}
                                        className="custom-checkbox__input" onInput={handleSelectBox}/>
                                 <span className="custom-checkbox__span"></span>
                             </label>
@@ -44,17 +44,17 @@ const BrandFilter = (props) => {
 
 const mapStateToProps = (state) => {
 
-    const brandItemsCount = {};
+    const categoryItemsCount = {};
 
     state.shop.products.forEach(p => {
-        brandItemsCount[p.brand] = brandItemsCount[p.brand] + 1 || 1;
+        categoryItemsCount[p.category] = categoryItemsCount[p.category] + 1 || 1;
     });
 
 
     return {
-        brandItemsCount
+        categoryItemsCount
     }
 
 };
 
-export default connect(mapStateToProps)(BrandFilter);
+export default connect(mapStateToProps)(CategoryFilter);

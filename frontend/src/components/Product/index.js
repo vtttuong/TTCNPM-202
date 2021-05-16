@@ -5,7 +5,7 @@ import {formatMoney} from "../../pipes/priceFormatter";
 import {cumulativeOffSet} from "../../utilities/cumulativeOffset";
 
 import './Product.scss';
-import SlideDots from "../SlideDots/SlideDots";
+import SlideDots from "../SlideDots/index";
 import {addProductToCart} from "../../actions";
 
 

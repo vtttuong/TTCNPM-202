@@ -1,9 +1,9 @@
 import React from 'react';
-import FilterBar from "../../containers/FilterBar/FilterBar";
-import ProductList from "../../containers/ProductList/ProductList";
-import Pagination from "../../components/Pagination/Pagination";
+import FilterBar from "../../containers/FilterBar/index";
+import ProductList from "../../containers/ProductList";
+import Pagination from "../../components/Pagination/index";
 
-const Home = () => {
+const Payment = () => {
     return (
         <React.Fragment>
             <div className="container" style={{paddingTop: '6rem'}} >
@@ -17,4 +17,4 @@ const Home = () => {
 };
 
 
-export default Home;
+export default Payment;

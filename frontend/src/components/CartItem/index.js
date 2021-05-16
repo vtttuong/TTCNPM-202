@@ -1,13 +1,13 @@
 import React, {useState} from 'react';
 import {connect} from 'react-redux';
-import {shortenTitle} from "../../pipes/shortenTitle";
+import {shortenname} from "../../pipes/shortenName";
 import {formatMoney} from "../../pipes/priceFormatter";
 import './CartItem.scss';
 import {addProductToCart, decrementCartQuantity, incrementCartQuantity, removeProductToCart} from "../../actions";
 
 const CartItem = (
     {
-        title,
+        name,
         price,
         description,
         quantity,
@@ -24,13 +24,13 @@ const CartItem = (
     };
 
     const handleQuantityChange = (e) => {
-      /*  const value = e.target.value;
+       const value = e.target.value;
         console.log(value)
 
         if(value > 0 && value <= 10) {
             setItemQuantity(value);
             dispatch(addProductToCart(id));
-        } */
+        } 
     };
 
     const incrementOrDecrement = (e, type) => {
@@ -58,7 +58,7 @@ const CartItem = (
                       />
             </div>
             <div className="col-12 text-sm-center col-sm-12 text-md-left col-md-6">
-                <h4 className="product-name"><strong>{shortenTitle(title)}</strong></h4>
+                <h4 className="product-name"><strong>{shortenname(name)}</strong></h4>
                 <h4>
                     <small className="product-description">{description}</small>
                 </h4>
@@ -74,7 +74,7 @@ const CartItem = (
                             type="button" value="+" className="plus" />
                             <input
                                 onChange={handleQuantityChange}
-                                type="number" step="1" max="10" min="1" value={itemQuantity} title="Qty"
+                                type="number" step="1" max="10" min="1" value={itemQuantity} name="Qty"
                                    className="qty"
                                    size="4" />
                                 <input

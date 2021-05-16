@@ -33,7 +33,6 @@ function getRandomArbitrary(min, max) {
     return Math.random() * (max - min) + min;
 }
 
-brand
 var phones = Object.keys(imagesMap).reduce((acc, key , i) => {
 
     if(imagesMap[key].length !== 0) {

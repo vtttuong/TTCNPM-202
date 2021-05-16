@@ -1,0 +1,1 @@
+export const categories = ["appetizer","fried","seafood","grill","hotpot","drink","beer"];

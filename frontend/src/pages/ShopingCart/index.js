@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {formatMoney} from "../../pipes/priceFormatter";
-import CartItem from "../../components/CartItem/CartItem";
+import CartItem from "../../components/CartItem/index";
 
 const ShoppingCart = (props) => {
     return (

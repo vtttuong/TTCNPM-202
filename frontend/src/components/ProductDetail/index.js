@@ -6,31 +6,25 @@ import {addProductToCart} from "../../actions";
 const ProductDetail = (props) => {
 
     const {
-        title,
+        name,
         images,
-        brand,
+        category,
         price,
-        cpu,
-        camera,
-        size,
-        weight,
-        display,
-        battery,
-        memory,
+        ingredients,
         description,
         id
     } = props.product;
 
 
-    const onCart = () => {
+    const onCart = () => {  
         props.dispatch(addProductToCart(props.product));
     };
 
     return (
         <aside className="col-sm-7">
             <article className="card-body p-5">
-                <h3 className="title mb-3">{title}</h3>
-
+                <h3 className="name mb-3">{name}</h3>
+        
                 <p className="price-detail-wrap">
 	<span className="price h3 text-warning">
 		<span className="currency">$</span><span className="num">{formatMoney(price)}</span>
@@ -40,33 +34,13 @@ const ProductDetail = (props) => {
                     <dt>Description</dt>
                     <dd><p className="text-capitalize">{description}</p></dd>
                 </dl>
-                <dl className="param param-feature">
-                    <dt>Brand</dt>
-                    <dd className="text-capitalize">{brand}</dd>
+                <dl className="item-category">
+                    <dt>Ingredients</dt>
+                    <dd><p className="text-capitalize">{ingredients}</p></dd>
                 </dl>
                 <dl className="param param-feature">
-                    <dt>Size</dt>
-                    <dd>{size}</dd>
-                </dl>
-                <dl className="param param-feature">
-                    <dt>Camera</dt>
-                    <dd>{camera}</dd>
-                </dl>
-                <dl className="param param-feature">
-                    <dt>CPU</dt>
-                    <dd>{cpu}</dd>
-                </dl>
-                <dl className="param param-feature">
-                    <dt>Memory</dt>
-                    <dd>{memory}</dd>
-                </dl>
-                <dl className="param param-feature">
-                    <dt>Display</dt>
-                    <dd>{display}</dd>
-                </dl>
-                <dl className="param param-feature">
-                    <dt>Battery</dt>
-                    <dd>{battery}</dd>
+                    <dt>Category</dt>
+                    <dd className="text-capitalize">{category}</dd>
                 </dl>
                 <hr/>
                 <hr/>
