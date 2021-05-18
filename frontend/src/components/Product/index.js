@@ -12,7 +12,7 @@ import {addProductToCart} from "../../actions";
 const Product = (props) => {
 
     const {
-        title,
+        name,
         price,
         images,
         description,
@@ -70,12 +70,12 @@ const Product = (props) => {
                 onMouseOut={handleMouseOut}
                 onTouchMove={handleImageChange}
                 onTouchEnd={handleMouseOut}
-                className="card-img-top product__img" src={img} alt={title} ref={imageRef}/>
+                className="card-img-top product__img" src={img} alt={name} ref={imageRef}/>
                 <SlideDots len={images.length} activeItem={aItem} changeItem={changeImage}/>
             </Link>
             <div className="card-body product__text">
                 <h4 className="card-title product__title">
-                    <Link to={`/products/${id}`}>{title}</Link>
+                    <Link to={`/products/${id}`}>{name}</Link>
                 </h4>
                 <h5 className="product__price">${formatMoney(price)}</h5>
                 <p className="card-text product__description">{description}</p>
