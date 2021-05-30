@@ -6,7 +6,7 @@ services:
     container_name: dev-django
     command: python manage.py runserver 0.0.0.0:8000
     ports:
-      - 8001:8000
+      - 8000:8000
     env_file:
       - ./.env.dev
     volumes:
@@ -20,7 +20,7 @@ services:
     container_name: dev-react
     command: npm start
     ports:
-      - 3001:3000
+      - 3000:3000
     env_file:
       - ./.env.dev
     tty: true
