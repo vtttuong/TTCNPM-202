@@ -77,7 +77,7 @@ const Product = (props) => {
                 <h4 className="card-title product__title">
                     <Link to={`/products/${id}`}>{name}</Link>
                 </h4>
-                <h5 className="product__price">${formatMoney(price)}</h5>
+                <h5 className="product__price">{formatMoney(price)} VND</h5>
                 <p className="card-text product__description">{description}</p>
                 <button
                     onClick={() => {

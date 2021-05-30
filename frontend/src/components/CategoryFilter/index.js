@@ -47,7 +47,7 @@ const mapStateToProps = (state) => {
     const categoryItemsCount = {};
 
     state.shop.products.forEach(p => {
-        categoryItemsCount[p.category] = categoryItemsCount[p.category] + 1 || 1;
+        p.category.forEach(k=>{categoryItemsCount[k] = categoryItemsCount[k] + 1 || 1;});
     });
 
 
