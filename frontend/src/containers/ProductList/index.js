@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import Product from "../../components/Product/index";
-
 import {categoryFilter} from "../../pipes/categoryFilter";
 import {orderByFilter} from "../../pipes/orderByFilter";
 import {paginationPipe} from "../../pipes/paginationFilter";
