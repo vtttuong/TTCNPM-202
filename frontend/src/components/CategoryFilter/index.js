@@ -6,7 +6,8 @@ import {addCategoryToFilter, removeCategoryFromFilter} from "../../actions";
 
 
 const CategoryFilter = (props) => {
-
+    console.log(props)
+    console.log('Heloooooo World')
     const {dispatch, categoryItemsCount} = props;
     const handleSelectBox = (e) => {
         const name = e.target.name;
@@ -27,7 +28,7 @@ const CategoryFilter = (props) => {
                 </div>
                 <ul className="list-group flex-row flex-wrap">
                     {categories.map(category => (
-                        <li className="list-group-item flex-50">
+                        <li key="{`index`}" className="list-group-item flex-50">
                             <label className="custom-checkbox text-capitalize"> {category} ({categoryItemsCount[category]})
                                 <input type="checkbox"
                                        name={category}

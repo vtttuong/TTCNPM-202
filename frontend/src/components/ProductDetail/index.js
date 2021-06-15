@@ -10,7 +10,6 @@ const ProductDetail = (props) => {
         images,
         category,
         price,
-        ingredients,
         description,
         id
     } = props.product;
@@ -27,16 +26,12 @@ const ProductDetail = (props) => {
         
                 <p className="price-detail-wrap">
 	<span className="price h3 text-warning">
-		<span className="currency"></span> <span className="num">{formatMoney(price)}</span>
+		<span className="currency"></span> <span className="num">{formatMoney(price)} VND</span>
 	</span>
                 </p>
                 <dl className="item-property">
                     <dt>Description</dt>
                     <dd><p className="text-capitalize">{description}</p></dd>
-                </dl>
-                <dl className="item-category">
-                    <dt>Ingredients</dt>
-                    <dd><p className="text-capitalize">{ingredients}</p></dd>
                 </dl>
                 <dl className="param param-feature">
                     <dt>Category</dt>

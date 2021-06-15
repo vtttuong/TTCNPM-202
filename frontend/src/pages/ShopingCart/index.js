@@ -1,7 +1,9 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import {Link} from 'react-router-dom';
 import {formatMoney} from "../../pipes/priceFormatter";
 import CartItem from "../../components/CartItem/index";
+import "./Shopping.scss"
 
 const ShoppingCart = (props) => {
     return (
@@ -18,14 +20,23 @@ const ShoppingCart = (props) => {
                                 <CartItem {...cart} img={cart.images[0]} />
                             )) : <p className="display-4 mt-5 text-center">Empty cart</p> }
                         </div>
+
                         <div className="card-footer">
-                            <div className="pull-right" style={{margin: '10px'}}>
-                                <div className="pull-right" style={{margin: '5px'}}>
+                            <div className="pull-left" style={{margin: '10px'}}>
+                                <div className="pull-left" style={{margin: '5px'}}>
                                     Total price: <b>{formatMoney(props.totalPrice)} VND</b>
                                 </div>
                             </div>
+                            <div className="pull-left payment" style={{margin: '5px'}} >
+                                <Link to="/payment" >
+                                    <button className="btn btn-secondary payment__btn"> 
+                                        Make payment
+                                    </button>
+                                </Link>
+                            </div>
                         </div>
                     </div>
+
                 </div>
             </>
     );

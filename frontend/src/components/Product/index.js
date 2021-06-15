@@ -3,18 +3,20 @@ import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 import {formatMoney} from "../../pipes/priceFormatter";
 import {cumulativeOffSet} from "../../utilities/cumulativeOffset";
-
 import './Product.scss';
 import SlideDots from "../SlideDots/index";
 import {addProductToCart} from "../../actions";
 
+//
+import {decrementCartQuantity, incrementOrDecrement, removeProductToCart} from "../../actions";
 
 const Product = (props) => {
 
     const {
         name,
-        price,
         images,
+        category,
+        price,
         description,
         id,
     } = props.product;
@@ -22,8 +24,6 @@ const Product = (props) => {
     const imageRef = React.createRef();
     const [img, setImg] = useState(images[0]);
     const [aItem, setAItem] = useState(0);
-
-
     const handleImageChange = (e) => {
 
         let  clientX;
@@ -79,16 +79,48 @@ const Product = (props) => {
                 </h4>
                 <h5 className="product__price">{formatMoney(price)} VND</h5>
                 <p className="card-text product__description">{description}</p>
+
                 <button
                     onClick={() => {
                         props.dispatch(addProductToCart({...props.product}))
                     }}
                     className="btn btn-info product__add-to-cart">Add to cart
                 </button>
+
+                <div>
+
+                </div>
+                
+        
             </div>
         </div>
     );
 };
 
 export default connect()(Product);
+
+// const handleQuantityChange = (e) => {
+//     const value = e.target.value;
+//      if(value > 0 && value <= 10) {
+//          setItemQuantity(value);
+//          dispatch(addProductToCart(id));
+//      } 
+//  };
+
+//  const incrementOrDecrement = (e, type) => {
+//     const value = itemQuantity;
+//     console.log(type, value);
+
+//     if(type === 'inc' && value < 10) {
+//         setItemQuantity(itemQuantity + 1);
+//         dispatch(incrementCartQuantity(id));
+//     }
+
+
+//     if(type === 'desc' && value > 1) {
+//         setItemQuantity(itemQuantity - 1);
+//         dispatch(decrementCartQuantity(id));
+//     }
+
+// };
 
