@@ -32,45 +32,24 @@ export const decrementCartQuantity = productId => {
 };
 
 
-export const ADD_BRAND_TO_FILTER = 'ADD_BRAND_TO_FILTER';
-export const REMOVE_BRAND_FROM_FILTER = 'REMOVE_BRAND_FROM_FILTER';
+export const ADD_CATEGORY_TO_FILTER = 'ADD_CATEGORY_TO_FILTER';
+export const REMOVE_CATEGORY_FROM_FILTER = 'REMOVE_CATEGORY_FROM_FILTER';
 
-export const addBrandToFilter = brand => {
+export const addCategoryToFilter = category => {
     return {
-        type: ADD_BRAND_TO_FILTER,
-        brand
+        type: ADD_CATEGORY_TO_FILTER,
+        category
     }
 };
 
 
-export const removeBrandFromFilter = brand => {
+export const removeCategoryFromFilter = category => {
     return  {
-        type: REMOVE_BRAND_FROM_FILTER,
-        brand
+        type: REMOVE_CATEGORY_FROM_FILTER,
+        category
     }
 };
 
-export const ORDER_BY_ASC = 'ORDER_BY_ASC';
-export const ORDER_BY_DESC = 'ORDER_BY_DESC';
-export const CLEAR_ORDER_BY_PRICE = 'CLEAR_ORDER_BY_PRICE';
-
-export const orderByAsc = () => {
-    return {
-        type: ORDER_BY_ASC
-    }
-};
-
-export const orderByDesc =  () => {
-    return {
-        type: ORDER_BY_DESC
-    }
-};
-
-export const clearOrderBy = () => {
-    return {
-        type: CLEAR_ORDER_BY_PRICE
-    }
-};
 
 
 export const PREV_PAGE = 'PREV_PAGE';

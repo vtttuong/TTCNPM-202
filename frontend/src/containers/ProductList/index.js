@@ -1,12 +1,10 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import Product from "../../components/Product/Product";
-
-import {brandFilter} from "../../pipes/brandFilter";
+import Product from "../../components/Product/index";
+import {categoryFilter} from "../../pipes/categoryFilter";
 import {orderByFilter} from "../../pipes/orderByFilter";
-import LayoutMode from "../../components/LayoutMode/LayoutMode";
 import {paginationPipe} from "../../pipes/paginationFilter";
-import Pagination from "../../components/Pagination/Pagination";
+import Pagination from "../../components/Pagination/index";
 
 class ProductList extends Component {
 
@@ -17,23 +15,6 @@ class ProductList extends Component {
         pagesToShow: 3,
         gridValue: 3
     };
-
-    changeLayout = (n) => {
-        this.setState({gridValue: n});
-
-        let realGridValue;
-
-        if(n === 4) {
-            realGridValue = 3
-        } else {
-            realGridValue = 4;
-        }
-
-      this.setState({
-          colValue: `col-lg-${realGridValue}`
-      });
-    };
-
 
     onPrev = () => {
         const updatedState = {...this.state};
@@ -66,11 +47,6 @@ class ProductList extends Component {
                 <div className="row mb-3">
                     <div className="col-12 d-none d-lg-block d-xl-block">
                         <div className="card ">
-                            <div className="card-header d-flex justify-content-end">
-                                <span className="mr-3">Change Layout: </span>
-                                <LayoutMode len={3} isActive={this.state.gridValue === 3} click={this.changeLayout} />
-                                <LayoutMode len={4} isActive={this.state.gridValue === 4}  click={this.changeLayout} />
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -99,11 +75,11 @@ class ProductList extends Component {
 }
 
 const mapStateToProps = state => {
-    const brands = state.brandFilter;
+    const categories = state.categoryFilter;
     const orderBy = state.orderBy;
 
-    const filterByBrandArr = brandFilter(state.shop.products, brands);
-    const filterByOrderArr = orderByFilter(filterByBrandArr, orderBy);
+    const filterByCategoryArr = categoryFilter(state.shop.products, categories);
+    const filterByOrderArr = orderByFilter(filterByCategoryArr, orderBy);
 
 
     return {products: filterByOrderArr }

@@ -6,11 +6,12 @@ import rootReducer from './reducers';
 import {BrowserRouter, Switch, Route, Redirect} from 'react-router-dom';
 
 import './App.scss';
-import Home from "./pages/Home/Home";
-import Header from "./components/Header/Header";
-import Footer from "./components/Footer/Footer";
-import ProductDetail from "./pages/ProductDetail/ProductDetail";
-import ShoppingCart from "./pages/ShopingCart/ShoppingCart";
+import Home from "./pages/Home";
+import Header from "./components/Header/index";
+import Footer from "./components/Footer/index";
+import ProductDetail from "./pages/ProductDetail";
+import ShoppingCart from "./pages/ShopingCart";
+import Payment from "./pages/Payment";
 
 
 
@@ -28,6 +29,7 @@ class App extends Component {
                         return <Redirect to={'/products'}/>
                     }}/>
                     <Route exact path={'/products'} component={Home}/>
+                    <Route exact path={'/payment'} component={Payment}/>
                     <Route exact path={'/products/:id'} component={ProductDetail}/>
                     <Route exact patr={'/cart'} component={ShoppingCart}/>
                 </Switch>

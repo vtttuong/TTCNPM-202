@@ -1,0 +1,17 @@
+.payment-area{
+    padding-top: 3px;
+&__btn{
+    position: absolute;
+    bottom: .8rem;
+    width: 50%;
+    left: 70%;
+    opacity: 100;
+    visibility: hidden;
+    transform: translateX(-50%);
+    transition: all .2s;
+    padding: 3px 12px;
+}
+&:hover &__btn{
+    box-shadow: 0 1rem 2rem rgba(0,0,0, .2);
+  }
+}

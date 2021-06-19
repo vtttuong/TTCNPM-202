@@ -1,7 +1,9 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import {Link} from 'react-router-dom';
 import {formatMoney} from "../../pipes/priceFormatter";
-import CartItem from "../../components/CartItem/CartItem";
+import CartItem from "../../components/CartItem/index";
+import "./Shopping.scss"
 
 const ShoppingCart = (props) => {
     return (
@@ -10,22 +12,31 @@ const ShoppingCart = (props) => {
                     <div className="card shopping-cart">
                         <div className="card-header bg-dark text-light">
                             <i className="fa fa-shopping-cart pr-2" aria-hidden="true"></i>
-                            Shipping cart
+                            Cart
                             <div className="clearfix"></div>
                         </div>
                         <div className="card-body">
                             {props.cartItemCount ? props.cartItems.map(cart => (
                                 <CartItem {...cart} img={cart.images[0]} />
-                            )) : <h1 className="display-4 mt-5 text-center">There is no product in your cart</h1> }
+                            )) : <p className="display-4 mt-5 text-center">Empty cart</p> }
                         </div>
+
                         <div className="card-footer">
-                            <div className="pull-right" style={{margin: '10px'}}>
-                                <div className="pull-right" style={{margin: '5px'}}>
-                                    Total price: <b>{formatMoney(props.totalPrice)}€</b>
+                            <div className="pull-left" style={{margin: '10px'}}>
+                                <div className="pull-left" style={{margin: '5px'}}>
+                                    Total price: <b>{formatMoney(props.totalPrice)} VND</b>
                                 </div>
+                            </div>
+                            <div className="pull-left payment" style={{margin: '5px'}} >
+                                <Link to="/payment" >
+                                    <button className="btn btn-secondary payment__btn"> 
+                                        Make payment
+                                    </button>
+                                </Link>
                             </div>
                         </div>
                     </div>
+
                 </div>
             </>
     );

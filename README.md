@@ -29,6 +29,6 @@ Yêu cầu cài docker trước nha !!!
 - `cd TTCNPM-202`
 - `docker-compose up`
 
-frontend project sẽ được chạy ở `http://localhost:8080/`
+frontend project sẽ được chạy ở `http://localhost:3001/`
 
 backend project sẽ được chạy ở `http://localhost:8000/api/posts`
