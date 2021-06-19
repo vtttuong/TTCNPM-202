@@ -6,8 +6,6 @@ import {addCategoryToFilter, removeCategoryFromFilter} from "../../actions";
 
 
 const CategoryFilter = (props) => {
-    console.log(props)
-    console.log('Heloooooo World')
     const {dispatch, categoryItemsCount} = props;
     const handleSelectBox = (e) => {
         const name = e.target.name;
@@ -44,7 +42,7 @@ const CategoryFilter = (props) => {
 };
 
 const mapStateToProps = (state) => {
-
+    console.log(state)
     const categoryItemsCount = {};
 
     state.shop.products.forEach(p => {

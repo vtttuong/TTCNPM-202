@@ -1,20 +1,60 @@
 import React from 'react';
-import FilterBar from "../../containers/FilterBar/index";
-import ProductList from "../../containers/ProductList";
-import Pagination from "../../components/Pagination/index";
+import {connect} from 'react-redux';
+import {formatMoney} from "../../pipes/priceFormatter";
+import BillItem from "../../components/BillItem/index";
+import MakePayment from '../../containers/MakePayment';
 
-const Payment = () => {
+const Payment = (props) => {
+    console.log(props,'payment')
     return (
-        <React.Fragment>
-            <div className="container" style={{paddingTop: '6rem'}} >
-                <div className="row">
-                    <FilterBar/>
-                    <ProductList/>
+        <>
+                <div className="container" style={{paddingTop: '3rem',paddingBottom:'3rem'}}>
+                    <div className="card shopping-cart" >
+                        <div className="card-header bg-dark text-light">
+                            <i aria-hidden="true"></i>
+                            Bill
+                            <div className="clearfix"></div>
+                        </div>
+                        <div className="card-body">
+                            {props.cartItemCount ? props.cartItems.map(cart => (
+                                <BillItem {...cart} img={cart.images[0]} />
+                            )) : <p className="display-4 mt-5 text-center">Empty cart</p> }
+                        </div>
+
+                        <div className="card-footer"  >
+                            <div className="pull-left" style={{margin: '10px'}}>
+                                <div className="pull-left" style={{margin: '5px'}}>
+                                    Total price: <b>{formatMoney(props.totalPrice)} VND</b>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div >
+
+                <div className="container" style={{paddingTop: '3rem',paddingBottom:'3rem'}}>
+                    <strong>Select payment method:</strong>
+                    <MakePayment/>
                 </div>
-            </div>
-        </React.Fragment>
+            </>
     );
 };
 
 
-export default Payment;
+
+const mapStateToProps = state => {
+
+    // console.log(state, 'state has changed');
+
+    return {
+        cartItems: state.shop.cart,
+        cartItemCount: state.shop.cart.reduce((count, curItem) => {
+            return count + curItem.quantity;
+        }, 0),
+        totalPrice: state.shop.cart.reduce((count, curItem) => {
+            return count + (curItem.price * curItem.quantity);
+        }, 0)
+    }
+}
+
+export default connect(mapStateToProps, null)(Payment);

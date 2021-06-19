@@ -6,7 +6,7 @@ export const  categoryFilterReducer = (state = '', action) => {
             if(state.includes(action.category)) return state;
             return state += action.category;
         case REMOVE_CATEGORY_FROM_FILTER:
-            console.log('remove category', action);
+            //console.log('remove category', action);
             const reg = new RegExp(action.category, 'gi');
             return state.replace(reg, '');
         default:

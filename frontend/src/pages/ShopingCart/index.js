@@ -6,10 +6,11 @@ import CartItem from "../../components/CartItem/index";
 import "./Shopping.scss"
 
 const ShoppingCart = (props) => {
+    console.log(props,'cart')
     return (
         <>
-                <div className="container" style={{paddingTop: '6rem'}}>
-                    <div className="card shopping-cart">
+                <div className="container" style={{paddingTop: '3rem',paddingBottom:'3rem'}}>
+                    <div className="card shopping-cart" >
                         <div className="card-header bg-dark text-light">
                             <i className="fa fa-shopping-cart pr-2" aria-hidden="true"></i>
                             Cart
@@ -21,12 +22,13 @@ const ShoppingCart = (props) => {
                             )) : <p className="display-4 mt-5 text-center">Empty cart</p> }
                         </div>
 
-                        <div className="card-footer">
+                        <div className="card-footer"  >
                             <div className="pull-left" style={{margin: '10px'}}>
                                 <div className="pull-left" style={{margin: '5px'}}>
                                     Total price: <b>{formatMoney(props.totalPrice)} VND</b>
                                 </div>
                             </div>
+                            {props.cartItemCount ?
                             <div className="pull-left payment" style={{margin: '5px'}} >
                                 <Link to="/payment" >
                                     <button className="btn btn-secondary payment__btn"> 
@@ -34,6 +36,7 @@ const ShoppingCart = (props) => {
                                     </button>
                                 </Link>
                             </div>
+                            : null} 
                         </div>
                     </div>
 
@@ -45,7 +48,7 @@ const ShoppingCart = (props) => {
 
 const mapStateToProps = state => {
 
-    console.log(state, 'state has changed');
+    // console.log(state, 'state has changed');
 
     return {
         cartItems: state.shop.cart,

@@ -1,0 +1,30 @@
+
+
+.quantity {
+    float: left;
+    margin-right: 15px;
+    background-color: #eee;
+    position: relative;
+    width: 80px;
+    overflow: hidden
+  }
+  
+  .shopping-cart {
+    margin-top: 20px;
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .product-name {
+      font-size: 1rem;
+      margin-top: .5rem;
+    }
+  
+    .product-description {
+      font-size: 1rem;
+    }
+  
+    .product-quantity-container {
+      margin-top: .5rem;
+    }
+  }
+  

@@ -5,7 +5,7 @@ import ProductSlider from "../../components/ProductSlider/index";
 
 const ProductDetail = (props) => {
 
-    console.log(props);
+    //console.log(props);
 
     return (
         <div className="container" style={{padding: '6rem 0'}}>

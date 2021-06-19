@@ -92,7 +92,7 @@ export const foods = [{
     "category":["drink"],
     "price":12000,
     "description":"abc",
-    "id":10
+    "id":11
 }
 ,{
     "name":"7 up",
@@ -100,7 +100,7 @@ export const foods = [{
     "category":["drink"],
     "price":12000,
     "description":"abc",
-    "id":10
+    "id":12
 }
 ,{
     "name":"7 up",
@@ -108,6 +108,6 @@ export const foods = [{
     "category":["drink"],
     "price":12000,
     "description":"abc",
-    "id":10
+    "id":13
 }
 ]

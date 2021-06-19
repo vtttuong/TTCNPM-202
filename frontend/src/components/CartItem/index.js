@@ -17,7 +17,7 @@ const CartItem = (
     }
 ) => {
 
-    console.log(id);
+    //console.log(id);
     const [itemQuantity, setItemQuantity] = useState(quantity);
     const removeItem = () => {
         dispatch(removeProductToCart(id));
@@ -33,7 +33,7 @@ const CartItem = (
 
     const incrementOrDecrement = (e, type) => {
         const value = itemQuantity;
-        console.log(type, value);
+        //console.log(type, value);
 
         if(type === 'inc' && value < 10) {
             setItemQuantity(itemQuantity + 1);
