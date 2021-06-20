@@ -5,7 +5,6 @@ import {
     REMOVE_PRODUCT_FROM_CART
 } from '../actions';
 import {foods} from "../data/foods";
-
 const initialState = {
     products: foods,
     cart: []
