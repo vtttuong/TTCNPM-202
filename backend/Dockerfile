@@ -26,6 +26,10 @@ RUN apk add --update --no-cache --virtual .tmp-build-deps \
 # copy entrypoint.sh
 COPY ./entrypoint.sh .
 RUN chmod 777 entrypoint.sh 
+RUN pip install apyori
+RUN pip install requests
+
+
 
 # copy project
 COPY . .

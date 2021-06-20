@@ -33,4 +33,16 @@ class OrderProduct(models.Model):
     order = models.ForeignKey(Order, related_name='orderproduct_order', on_delete=models.DO_NOTHING)
     class Meta:
         managed = True
-        
+class ComboProduct(models.Model):
+    product = models.ForeignKey(Product, related_name='comboproduct_product', on_delete=models.DO_NOTHING)
+    quantity = models.IntegerField(default=999)
+    combo = models.IntegerField(default=1)
+    class Meta:
+        managed = True
+class ComBo(models.Model):
+    quantity = models.IntegerField(default=999)
+    combo = models.IntegerField(default=1)
+    image_url = models.URLField(null=True)
+    price = models.IntegerField(null=False)
+    class Meta:
+        managed = True

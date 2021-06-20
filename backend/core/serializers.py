@@ -31,3 +31,12 @@ class OrderProductSerializer(serializers.ModelSerializer):
     class Meta:
         model = OrderProduct
         fields = '__all__'
+        
+class ComboProductSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ComboProduct
+        fields = '__all__'
+class ComBoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ComBo
+        fields = '__all__'

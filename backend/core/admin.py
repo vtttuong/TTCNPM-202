@@ -23,3 +23,9 @@ class OrderAdmin(admin.ModelAdmin):
 @admin.register(OrderProduct)
 class OrderProductAdmin(admin.ModelAdmin):
     pass
+@admin.register(ComboProduct)
+class ComboProductAdmin(admin.ModelAdmin):
+    pass
+@admin.register(ComBo)
+class ComBoAdmin(admin.ModelAdmin):
+    pass

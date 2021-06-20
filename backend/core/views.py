@@ -47,3 +47,11 @@ class OrderProductViewSet(ModelViewSet):
     serializer_class = OrderProductSerializer
     permission_classes = [AllowAny]
     
+class ComboProductViewSet(ModelViewSet):
+    queryset = ComboProduct.objects.all()
+    serializer_class = ComboProductSerializer
+    permission_classes = [AllowAny]
+class ComBoViewSet(ModelViewSet):
+    queryset = ComBo.objects.all()
+    serializer_class = ComBoSerializer
+    permission_classes = [AllowAny]

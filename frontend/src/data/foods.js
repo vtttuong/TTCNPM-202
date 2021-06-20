@@ -86,28 +86,4 @@ export const foods = [{
     "description":"abc",
     "id":10
 }
-,{
-    "name":"7 up",
-    "images":["https://cdn.tgdd.vn/Products/Images/2443/76446/bhx/nuoc-ngot-7-up-vi-chanh-330ml-201905301056152288.JPG?v1"],
-    "category":["drink"],
-    "price":12000,
-    "description":"abc",
-    "id":10
-}
-,{
-    "name":"7 up",
-    "images":["https://cdn.tgdd.vn/Products/Images/2443/76446/bhx/nuoc-ngot-7-up-vi-chanh-330ml-201905301056152288.JPG?v1"],
-    "category":["drink"],
-    "price":12000,
-    "description":"abc",
-    "id":10
-}
-,{
-    "name":"7 up",
-    "images":["https://cdn.tgdd.vn/Products/Images/2443/76446/bhx/nuoc-ngot-7-up-vi-chanh-330ml-201905301056152288.JPG?v1"],
-    "category":["drink"],
-    "price":12000,
-    "description":"abc",
-    "id":10
-}
 ]
