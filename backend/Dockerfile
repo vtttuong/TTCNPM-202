@@ -36,3 +36,5 @@ COPY . .
 
 # run entrypoint.sh
 ENTRYPOINT ["/bin/sh","/srv/app/entrypoint.sh"]
+
+RUN python listorder.py
