@@ -2,10 +2,10 @@ from django.shortcuts import render
 from django.http import JsonResponse
 from rest_framework.decorators import api_view 
 from rest_framework.response import Response
-
+from rest_framework.decorators import action
 from rest_framework import viewsets, status, exceptions
 from rest_framework.viewsets import ModelViewSet
-
+import requests
 from rest_framework.permissions import AllowAny
 from .serializers import *
 from .models import *
@@ -22,6 +22,7 @@ def api_overview(request):
         'Delete': '/product-delete/<str:pk>/',
     }
     return Response(api_urls)
+
 class UserViewSet(ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
@@ -47,11 +48,21 @@ class OrderProductViewSet(ModelViewSet):
     serializer_class = OrderProductSerializer
     permission_classes = [AllowAny]
     
+    
 class ComboProductViewSet(ModelViewSet):
     queryset = ComboProduct.objects.all()
     serializer_class = ComboProductSerializer
     permission_classes = [AllowAny]
+    
 class ComBoViewSet(ModelViewSet):
     queryset = ComBo.objects.all()
     serializer_class = ComBoSerializer
     permission_classes = [AllowAny]
+   
+
+class ImageViewSet(ModelViewSet):
+    queryset = Image.objects.all()
+    serializer_class = ImageSerializer
+    permission_classes = [AllowAny]
+
+   

@@ -1,4 +1,5 @@
-export const foods = [{
+
+export const foods= [{
     "name": "Lotus Salad",
     "images": ["https://i.ytimg.com/vi/W7mZUwyAa_4/maxresdefault.jpg?v1"],
     "category": ["appetizer"],
@@ -85,5 +86,14 @@ export const foods = [{
     "price":12000,
     "description":"abc",
     "id":10
+},
+
+{
+    "name":"Tiger Beer, Steamed octopus",
+    "images":["http://127.0.0.1:8000/api/api_media/download.jpeg"],
+    "category":["combo"],
+    "price":118000,
+    "description":"abc",
+    "id":11
 }
 ]

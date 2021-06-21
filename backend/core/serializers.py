@@ -40,3 +40,7 @@ class ComBoSerializer(serializers.ModelSerializer):
     class Meta:
         model = ComBo
         fields = '__all__'
+class ImageSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Image
+        fields ='__all__' #['image_url','id',"product"]

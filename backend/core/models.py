@@ -42,7 +42,14 @@ class ComboProduct(models.Model):
 class ComBo(models.Model):
     quantity = models.IntegerField(default=999)
     combo = models.IntegerField(default=1)
-    image_url = models.URLField(null=True)
+    image_url= models.URLField(null=True)
     price = models.IntegerField(null=False)
+    name = models.CharField(max_length=250, null=True)
     class Meta:
         managed = True
+class Image(models.Model):
+    image_url= models.ImageField(null=True)
+   # product = models.ForeignKey(Product, related_name='images_product', on_delete=models.DO_NOTHING)
+    class Meta:
+        managed = True
+
