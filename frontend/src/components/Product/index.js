@@ -7,9 +7,6 @@ import './Product.scss';
 import SlideDots from "../SlideDots/index";
 import { addProductToCart } from "../../actions";
 
-//
-import { decrementCartQuantity, incrementOrDecrement, removeProductToCart } from "../../actions";
-
 const Product = (props) => {
 
     const {
@@ -18,13 +15,13 @@ const Product = (props) => {
         category,
         price,
         description,
-        id,
+        id
     } = props.product;
-
     const imageRef = React.createRef();
     const [img, setImg] = useState(images[0]);
     const [aItem, setAItem] = useState(0);
-    const [quantity, setQuantity] = useState(0);
+    const [quantity, setQuantity] = useState(1);
+
     const handleImageChange = (e) => {
 
         let clientX;
@@ -63,7 +60,6 @@ const Product = (props) => {
         setImg(images[i]);
         setAItem(i);
     }
-
     return (
         <div className="card h-100 product">
             <Link to={`/products/${id}`} className="product__link"><img
@@ -83,7 +79,7 @@ const Product = (props) => {
                 <div className="d-flex align-items-center">
                     <div className="quantityPro">
                         <div type="button" className="btn bquality btn-secondary"
-                            onClick={() => { if (quantity > 0) setQuantity(quantity - 1); }}>-</div>
+                            onClick={() => { if (quantity > 1) setQuantity(quantity - 1); }}>-</div>
                         <div className="bquality text-center">{quantity}</div>
                         <div type="button" className="btn bquality btn-secondary"
                             onClick={() => { if (quantity < 10) setQuantity(quantity + 1); }}>+</div>
@@ -91,7 +87,8 @@ const Product = (props) => {
 
                     <button
                         onClick={() => {
-                            props.dispatch(addProductToCart({ ...props.product }))
+                            console.log(props,'props')
+                            props.dispatch(addProductToCart({ ...props.product,quantity},quantity))
                         }}
                         className="btn btn-info product__add-to-cart">Add to cart
                     </button>

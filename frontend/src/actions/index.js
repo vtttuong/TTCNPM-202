@@ -3,10 +3,10 @@ export const REMOVE_PRODUCT_FROM_CART = 'REMOVE_PRODUCT_FROM_CART';
 export const INCREMENT_CART_ITEM_QUANTITY = 'INCREMENT_CART_ITEM_QUANTITY';
 export const DECREMENT_CART_ITEM_QUANTITY = 'DECREMENT_CART_ITEM_QUANTITY';
 
-export const addProductToCart = product => {
+export const addProductToCart = (product,quantity) => {
     return {
         type: ADD_PRODUCT_TO_CART,
-        payload: product
+        payload: [product,quantity]
     }
 };
 
