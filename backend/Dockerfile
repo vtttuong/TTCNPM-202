@@ -31,4 +31,4 @@ RUN chmod 777 entrypoint.sh
 COPY . .
 
 # run entrypoint.sh
-ENTRYPOINT ["apk","/srv/app/entrypoint.sh"]
+ENTRYPOINT ["/bin/sh","/srv/app/entrypoint.sh"]
