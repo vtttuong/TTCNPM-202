@@ -22,7 +22,7 @@ const Payment = (props) => {
                         </div>
 
                         <div className="card-footer"  >
-                            <div className="pull-left" style={{margin: '10px'}}>
+                            <div className="pull-right" style={{margin: '10px'}}>
                                 <div className="pull-left" style={{margin: '5px'}}>
                                     Total price: <b>{formatMoney(props.totalPrice)} VND</b>
                                 </div>
