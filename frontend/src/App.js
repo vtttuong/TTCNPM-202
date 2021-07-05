@@ -5,7 +5,7 @@ import rootReducer from './reducers';
 
 import {BrowserRouter, Switch, Route, Redirect} from 'react-router-dom';
 
-import './App.scss';
+//import './App.scss';
 import Home from "./pages/Home";
 import Header from "./components/Header/index";
 import Footer from "./components/Footer/index";

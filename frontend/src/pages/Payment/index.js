@@ -34,7 +34,7 @@ const Payment = (props) => {
 
                 <div className="container" style={{paddingTop: '3rem',paddingBottom:'3rem'}}>
                     <strong>Select payment method:</strong>
-                    <MakePayment/>
+                    <MakePayment {...props}/>
                 </div>
             </>
     );

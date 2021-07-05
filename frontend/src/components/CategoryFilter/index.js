@@ -1,8 +1,10 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import axios from 'axios';
 import './CategoryFilter.scss';
 import {categories} from "../../data/categories";
 import {addCategoryToFilter, removeCategoryFromFilter} from "../../actions";
+
 
 
 const CategoryFilter = (props) => {

@@ -15,8 +15,8 @@ const ProductDetail = (props) => {
     } = props.product;
 
 
-    const onCart = () => {  
-        props.dispatch(addProductToCart(props.product));
+    const onCart = (quantity) => {  
+        props.dispatch(addProductToCart({ ...props.product,quantity},quantity));
     };
 
     return (
@@ -40,7 +40,7 @@ const ProductDetail = (props) => {
                 <hr/>
                 <hr/>
                 <button
-                    onClick={onCart}
+                    onClick={onCart(1)}
                     className="btn btn-lg btn-outline-primary text-uppercase"><i
                     className="fa fa-shopping-cart"/> Add to cart
                 </button>

@@ -75,6 +75,7 @@ class ProductList extends Component {
 }
 
 const mapStateToProps = state => {
+    
     const categories = state.categoryFilter;
     const orderBy = state.orderBy;
 

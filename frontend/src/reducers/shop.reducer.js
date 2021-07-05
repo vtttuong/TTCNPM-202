@@ -1,17 +1,26 @@
+import axios from 'axios';
+import { useEffect } from 'react';
+import {foods} from '../data/foods'
 import {
     ADD_PRODUCT_TO_CART,
     DECREMENT_CART_ITEM_QUANTITY,
     INCREMENT_CART_ITEM_QUANTITY,
     REMOVE_PRODUCT_FROM_CART
 } from '../actions';
-import { foods } from "../data/foods";
+
 const initialState = {
     products: foods,
     cart: []
 };
 
-
 const shopReducer = (state = initialState, action,quantity=1) => {
+    // useEffect(()=>{
+    //     axios.get(`http://localhost:8080/api/product`)
+    //       .then(res => {
+    //         const products = res.data;
+    //         initialState.products=products;
+    //       })
+    // },[])
     let updatedCart;
     let updatedItemIndex;
 
