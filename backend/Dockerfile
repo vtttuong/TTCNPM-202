@@ -11,9 +11,6 @@ ENV PYTHONUNBUFFERED 1
 # install dependencies
 RUN pip install --upgrade pip
 COPY ./requirements.txt .
-RUN apk add --no-cache jpeg-dev zlib-dev
-RUN apk add --no-cache --virtual .build-deps build-base linux-headers \
-    && pip install Pillow
 RUN apk add --update --no-cache postgresql-client
 # install temp dependencies for build of pyscopg2 etc
 RUN apk add --update --no-cache --virtual .tmp-build-deps \
@@ -39,5 +36,3 @@ COPY . .
 
 # run entrypoint.sh
 ENTRYPOINT ["/bin/sh","/srv/app/entrypoint.sh"]
-
-#RUN python listorder.py
